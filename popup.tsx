@@ -1,21 +1,36 @@
-import { Button } from "antd"
-import { useState } from "react"
+import { AndroidOutlined, AppleOutlined } from "@ant-design/icons"
+import { Button, Card, Input, Tabs } from "antd"
+import type { TabItem } from "antd/es/tabs"
+import { useEffect, useState } from "react"
+
+import Search from "./src/components/Search"
 
 import "./index.less"
+import "./popup.less"
+
+const historyKey = 1
+const markKey = 2
+const tabsOptions = [
+  {
+    label: "历史记录",
+    key: historyKey,
+    children: <Search />
+  },
+  {
+    label: "书签",
+    key: markKey,
+    children: " <SearchMark />"
+  }
+]
 
 function IndexPopup() {
-  const [data, setData] = useState("")
+  const [data, setData] = useState([])
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: 16
-      }}>
-      <h2>Welcome to your Extension!</h2>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-      <Button type="primary">点击</Button>
+    <div className={"popup"}>
+      <Card className="popup-card">
+        <Tabs defaultActiveKey={historyKey} items={tabsOptions}></Tabs>
+      </Card>
     </div>
   )
 }
