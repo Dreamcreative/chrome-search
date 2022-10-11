@@ -7,6 +7,7 @@ import "./search.less"
 
 const Search: React.FC = () => {
   const [data, setData] = useState([])
+  const [searchDate, setSearchDate] = useState([])
   useEffect(() => {
     chrome.windows.getAll({ populate: true }, function (windowList) {
       let tabs = []
@@ -14,6 +15,7 @@ const Search: React.FC = () => {
         tabs.push(...item.tabs)
       }
       setData(tabs)
+      setSearchDate(tabs)
       console.log("🚀 ~ file: Search.tsx ~ line 15 ~ tabs", tabs)
     })
   }, [])
@@ -29,16 +31,21 @@ const Search: React.FC = () => {
   }
   const handleInputChange = (e) => {
     const val = e.target.value
+    const filterData = data.filter((item) => {
+      return item.title.indexOf(val) > -1
+    })
+    setSearchDate(filterData)
   }
   const throttleInputChange = throttle(handleInputChange, 500)
   return (
     <div className="search">
       <Input
+        allowClear
         placeholder="搜索打开的Tab"
         onChange={(val) => throttleInputChange(val)}></Input>
       <div className="search-container">
         <List
-          dataSource={data}
+          dataSource={searchDate}
           renderItem={(item) => {
             const { id, favIconUrl, title } = item
             return (
@@ -60,7 +67,9 @@ const Search: React.FC = () => {
             )
           }}></List>
       </div>
-      <footer className="search-footer">{data.length || 0} 个打开的Tab</footer>
+      <footer className="search-footer">
+        {searchDate.length || 0} 个打开的Tab
+      </footer>
     </div>
   )
 }
