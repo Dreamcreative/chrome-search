@@ -1,22 +1,19 @@
 .search {
   display: flex;
   flex-direction: column;
-  height: 340px;
+  // height: 340px;
   width: 100%;
   transform: all 1s;
   &-container {
     margin-top: 20px;
-    padding-right: 20px;
-    flex: 1;
-    overflow-y: scroll;
-    .ant-list-items {
-      & > .ant-list-item {
-        cursor: pointer;
-        padding-left: 12px;
-        padding-right: 12px;
-        &:hover {
-          background-color: #ddd;
-        }
+    padding-right: 10px;
+
+    .ant-list-item {
+      cursor: pointer;
+      padding-left: 12px;
+      padding-right: 12px;
+      &:hover {
+        background-color: #ddd;
       }
     }
   }
