@@ -12,7 +12,7 @@ const historyKey = 1
 const markKey = 2
 const tabsOptions = [
   {
-    label: "历史记录",
+    label: "页面",
     key: historyKey,
     children: <Search />
   },
