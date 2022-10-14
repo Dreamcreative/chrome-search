@@ -5,6 +5,8 @@ import VirtualList from "rc-virtual-list"
 import React, { useEffect, useState } from "react"
 import type { ChangeEvent, MouseEvent } from "react"
 
+import { filterDatas } from "~src/utils/index"
+
 import "~src/components/search.less"
 
 export interface TabListProps {}
@@ -19,12 +21,6 @@ const TabList: React.FC<TabListProps> = () => {
     getAllTabs()
   }, [])
 
-  const filterDatas = (data: chrome.tabs.Tab[], val): chrome.tabs.Tab[] => {
-    const filterData = data.filter((item) => {
-      return item.title.indexOf(val) > -1
-    })
-    return filterData
-  }
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
     const filterData = filterDatas(tabDatas, val)

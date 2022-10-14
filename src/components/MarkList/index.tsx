@@ -5,7 +5,7 @@ import VirtualList from "rc-virtual-list"
 import React, { useEffect, useState } from "react"
 import type { ChangeEvent, MouseEvent } from "react"
 
-import { flattenTree } from "~src/utils/index"
+import { filterDatas, flattenTree } from "~src/utils/index"
 
 import "~src/components/search.less"
 
@@ -32,15 +32,6 @@ const MarkList: React.FC<MarkListProps> = () => {
       message.success("成功删除书签！")
       getAllBookmarks()
     })
-  }
-  const filterDatas = (
-    data: chrome.bookmarks.BookmarkTreeNode[],
-    val
-  ): chrome.bookmarks.BookmarkTreeNode[] => {
-    const filterData = data.filter((item) => {
-      return item.title.indexOf(val) > -1
-    })
-    return filterData
   }
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
