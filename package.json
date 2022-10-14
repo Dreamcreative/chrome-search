@@ -3,7 +3,7 @@
   "displayName": "Chrome search",
   "version": "0.0.0",
   "description": "Chrome search",
-  "author": "xc",
+  "author": "m543438924@163.com",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build"
