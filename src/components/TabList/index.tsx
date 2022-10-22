@@ -1,8 +1,9 @@
 import { DeleteOutlined } from "@ant-design/icons"
 import { Avatar, Input, List, Space } from "antd"
+import type { InputRef } from "antd"
 import { debounce } from "lodash-es"
 import VirtualList from "rc-virtual-list"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import type { ChangeEvent, MouseEvent } from "react"
 
 import { filterDatas } from "~src/utils/index"
@@ -11,6 +12,7 @@ import "~src/components/search.less"
 
 export interface TabListProps {}
 const TabList: React.FC<TabListProps> = () => {
+  const inputRef = useRef<InputRef>(null)
   const [tabSearchData, setTabSearchDate] = useState<
     chrome.tabs.Tab[] | undefined
   >([])
@@ -20,6 +22,9 @@ const TabList: React.FC<TabListProps> = () => {
   useEffect(() => {
     getAllTabs()
   }, [])
+  useEffect(() => {
+    inputRef?.current?.focus()
+  }, [inputRef.current])
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value
@@ -72,6 +77,7 @@ const TabList: React.FC<TabListProps> = () => {
   return (
     <div className="list">
       <Input
+        ref={inputRef}
         allowClear
         placeholder={`搜索打开的页面`}
         onChange={(val) => debounceInputChange(val)}></Input>

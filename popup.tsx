@@ -1,7 +1,4 @@
-import { AndroidOutlined, AppleOutlined } from "@ant-design/icons"
-import { Button, Card, Input, Tabs } from "antd"
-import type { TabItem } from "antd/es/tabs"
-import { useEffect, useState } from "react"
+import { Card, Tabs } from "antd"
 
 import Search from "./src/components/Search"
 
@@ -29,7 +26,10 @@ function IndexPopup() {
   return (
     <div className={"popup"}>
       <Card className="popup-card">
-        <Tabs defaultActiveKey={historyKey} items={tabsOptions}></Tabs>
+        <Tabs
+          defaultActiveKey={historyKey}
+          items={tabsOptions}
+          destroyInactiveTabPane></Tabs>
       </Card>
     </div>
   )

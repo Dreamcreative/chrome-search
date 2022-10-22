@@ -1,8 +1,9 @@
 import { DeleteOutlined } from "@ant-design/icons"
 import { Avatar, Input, List, Space, message } from "antd"
+import type { InputRef } from "antd"
 import { debounce } from "lodash-es"
 import VirtualList from "rc-virtual-list"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import type { ChangeEvent, MouseEvent } from "react"
 
 import { filterDatas, flattenTree } from "~src/utils/index"
@@ -13,6 +14,7 @@ const icon = require("~assets/icon.png")
 
 export interface MarkListProps {}
 const MarkList: React.FC<MarkListProps> = () => {
+  const inputRef = useRef<InputRef>(null)
   const [markDatas, setMarkDatas] = useState([])
   const [bookmarkSearchData, setBookmarkSearchDate] = useState<
     chrome.bookmarks.BookmarkTreeNode[]
@@ -22,6 +24,9 @@ const MarkList: React.FC<MarkListProps> = () => {
   useEffect(() => {
     getAllBookmarks()
   }, [])
+  useEffect(() => {
+    inputRef?.current?.focus()
+  }, [inputRef.current])
   const newTab = (bookmark) => {
     const { url } = bookmark
     chrome.tabs.create({ url: url })
@@ -72,6 +77,7 @@ const MarkList: React.FC<MarkListProps> = () => {
   return (
     <div className="list">
       <Input
+        ref={inputRef}
         allowClear
         placeholder={`搜索书签`}
         onChange={(val) => debounceInputChange(val)}></Input>
