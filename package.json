@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "antd": "^4.23.5",
+    "antd": "^5.0.0",
     "plasmo": "0.56.0",
     "rc-virtual-list": "^3.4.8",
     "react": "18.2.0",
