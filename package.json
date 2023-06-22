@@ -24,7 +24,7 @@
     "@types/react-dom": "18.0.6",
     "lodash-es": "^4.17.21",
     "prettier": "2.7.1",
-    "typescript": "4.8.4"
+    "typescript": "4.9.5"
   },
   "manifest": {
     "name": "chrome-search",
