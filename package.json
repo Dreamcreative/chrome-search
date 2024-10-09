@@ -11,7 +11,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.23.5",
-    "plasmo": "0.56.0",
+    "plasmo": "0.89.3",
     "rc-virtual-list": "^3.4.8",
     "react": "18.2.0",
     "react-dom": "18.2.0"
