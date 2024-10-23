@@ -4,7 +4,7 @@ specifiers:
   '@ant-design/icons': ^4.7.0
   '@plasmohq/prettier-plugin-sort-imports': 3.5.2
   '@types/chrome': 0.0.197
-  '@types/node': 18.8.3
+  '@types/node': 18.19.59
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   antd: ^4.23.5
@@ -27,7 +27,7 @@ dependencies:
 devDependencies:
   '@plasmohq/prettier-plugin-sort-imports': 3.5.2_prettier@2.7.1
   '@types/chrome': 0.0.197
-  '@types/node': 18.8.3
+  '@types/node': 18.19.59
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   lodash-es: 4.17.21
@@ -1660,8 +1660,10 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: false
 
-  /@types/node/18.8.3:
-    resolution: {integrity: sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w==}
+  /@types/node/18.19.59:
+    resolution: {integrity: sha512-vizm2EqwV/7Zay+A6J3tGl9Lhr7CjZe2HmWS988sefiEmsyP9CeXEleho6i4hJk/8UtZAo0bWN4QPZZr83RxvQ==}
+    dependencies:
+      undici-types: 5.26.5
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -4610,6 +4612,10 @@ packages:
     resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+
+  /undici-types/5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
 
   /unique-string/3.0.0:
     resolution: {integrity: sha512-VGXBUVwxKMBUznyffQweQABPRRW1vHZAbadFZud4pLFAqRGvv/96vafgjWFqzourzr8YonlQiPgH0YCJfawoGQ==}
