@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ant-design/icons': ^4.7.0
   '@plasmohq/prettier-plugin-sort-imports': 3.5.2
-  '@types/chrome': 0.0.197
+  '@types/chrome': 0.3.7
   '@types/node': 18.8.3
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -26,7 +26,7 @@ dependencies:
 
 devDependencies:
   '@plasmohq/prettier-plugin-sort-imports': 3.5.2_prettier@2.7.1
-  '@types/chrome': 0.0.197
+  '@types/chrome': 0.3.7
   '@types/node': 18.8.3
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -1631,21 +1631,10 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
-  /@types/chrome/0.0.197:
-    resolution: {integrity: sha512-m1NfS5bOjaypyqQfaX6CxmJodZVcvj5+Mt/K94EBHkflYjPNmXHAzbxfifdLMa0YM3PDyOxohoTS5ug/e6p5jA==}
+  /@types/chrome/0.3.7:
+    resolution: {integrity: sha512-jWZgbHqWbTL1a5+PoyN0OJutNyejWgyZ5MdcvKo6iJE1TNRtXR3FxsC4WzNl52yZWPidfWC8NV/VUNZf+OFKcA==}
     dependencies:
-      '@types/filesystem': 0.0.32
       '@types/har-format': 1.2.9
-    dev: true
-
-  /@types/filesystem/0.0.32:
-    resolution: {integrity: sha512-Yuf4jR5YYMR2DVgwuCiP11s0xuVRyPKmz8vo6HBY3CGdeMj8af93CFZX+T82+VD1+UqHOxTq31lO7MI7lepBtQ==}
-    dependencies:
-      '@types/filewriter': 0.0.29
-    dev: true
-
-  /@types/filewriter/0.0.29:
-    resolution: {integrity: sha512-BsPXH/irW0ht0Ji6iw/jJaK8Lj3FJemon2gvEqHKpCdDCeemHa+rI3WBGq5z7cDMZgoLjY40oninGxqk+8NzNQ==}
     dev: true
 
   /@types/har-format/1.2.9:
